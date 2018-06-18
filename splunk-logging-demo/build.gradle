@@ -1,0 +1,33 @@
+apply plugin: 'groovy'
+
+sourceSets {
+    logback
+    log4j2
+}
+
+dependencies {
+    logbackCompile project(":splunk-logging-logback"),
+                   sourceSets.main.output
+
+    log4j2Compile project(":splunk-logging-log4j2"),
+                  sourceSets.main.output
+}
+
+task runLogbackLoggingDemo(type: JavaExec) {
+    systemProperty "logging.enable.log.to.file", true
+    systemProperty "logging.enable.log.to.splunk", true
+    systemProperty "logging.splunk.host", "no-host.rgs.ru"
+    systemProperty "logging.splunk.port", 8088
+    systemProperty "logging.splunk.token", "no-token"
+    systemProperty "logging.system.name", "loggingTest"
+    systemProperty "logging.business.index.name", "businessoperations_test"
+
+    main = 'ru.rgs.logging.splunk.demo.LogbackLogging'
+    classpath = sourceSets.logback.runtimeClasspath + sourceSets.main.runtimeClasspath
+}
+
+
+task runLog4j2LoggingDemo(type: JavaExec) {
+    main = 'ru.rgs.logging.splunk.demo.Log4j2Logging'
+    classpath = sourceSets.log4j2.runtimeClasspath + sourceSets.main.runtimeClasspath
+}

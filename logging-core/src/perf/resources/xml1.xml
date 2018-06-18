@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (c) 2018 RGS Group.
+  ~ Any use of this code without the RGS express written consent is prohibited.
+  -->
+
+<rgs>
+    <CalcResponseValue>
+        <IdRequestCalc>4325461411</IdRequestCalc>
+        <PolicyCalc>
+            <PolicyKBM>3</PolicyKBM>
+            <PolicyKBMValue>1</PolicyKBMValue>
+        </PolicyCalc>
+        <CalcKBMResponses>
+            <ErrorInfo>
+                <Code>3</Code>
+                <Message>Обработан успешно</Message>
+            </ErrorInfo>
+        </CalcKBMResponses>
+    </CalcResponseValue>
+    <ErrorList>
+        <ErrorInfo>
+            <Code>3</Code>
+            <Message>Обработан успешно</Message>
+        </ErrorInfo>
+    </ErrorList>
+</rgs>

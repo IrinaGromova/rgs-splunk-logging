@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2018 RGS Group.
+  ~ Any use of this code without the RGS express written consent is prohibited.
+  -->
+
+<Configuration>
+    <Appenders>
+        <InMemoryAppender name="inMemoryAppender">
+            <SplunkJsonLayout systemName="self"
+                              environment="testEnvironment"
+                              nodeName="testNode"
+                              includeThreadName="false"
+                              includeLoggerName="false"
+                              sparseLogging="false"
+                              xmlToJsonFields="XMLQueryBody"
+                              jsonFields="JsonQueryBody"/>
+        </InMemoryAppender>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger level="DEBUG" name="ru.rgs.logging.log4j2.tests" additivity="false">
+            <AppenderRef ref="inMemoryAppender"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

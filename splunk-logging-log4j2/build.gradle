@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+apply plugin: 'project-report'
+
+dependencies {
+    compile project(":logging-core"),
+            "org.apache.commons:commons-lang3",
+            "org.apache.logging.log4j:log4j-core",
+            "org.apache.logging.log4j:log4j-slf4j-impl",
+            "org.projectlombok:lombok",
+            "org.slf4j:slf4j-api"
+
+    testCompile project(":logging-test-inmemory-log4j2"),
+                "com.google.code.gson:gson",
+                "org.codehaus.groovy:groovy-all",
+                "org.spockframework:spock-core"
+
+    runtime "com.splunk.logging:splunk-library-javalogging"
+}

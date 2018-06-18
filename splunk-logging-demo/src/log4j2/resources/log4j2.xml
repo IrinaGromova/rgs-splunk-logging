@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2018 RGS Group.
+  ~ Any use of this code without the RGS express written consent is prohibited.
+  -->
+
+<Configuration>
+    <Appenders>
+        <!--Http using: includeMDC="false" - prevents duplicates data under properties node -->
+        <Http name="splunkBusinessAppender"
+              url="http://no-host.rgs.ru:8088"
+              token="no-token"
+              index="businessoperations_test"
+              includeLoggerName="false"
+              includeThreadName="false"
+              includeMDC="false"
+              includeException="true"
+              includeMarker="false"
+              sourcetype="json-escaped"
+              pool_select_interval="100"
+              pool_socket_timeout="5000"
+              pool_connection_timeout="1000"
+              connection_request_timeout="120000">
+            <SplunkJsonLayout systemName="loggingTest"
+                              includeThreadName="false"
+                              includeLoggerName="false"
+                              sparseLogging="true"
+                              jsonFields="json1,json2,json3"
+                              includeMDC="true"
+                              xmlToJsonFields="xml1"/>
+        </Http>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="splunkBusinessAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>

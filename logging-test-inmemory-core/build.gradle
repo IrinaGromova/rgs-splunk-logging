@@ -1,0 +1,7 @@
+apply plugin: 'groovy'
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all"
+    compile "org.slf4j:slf4j-api"
+    compile project(":logging-core")
+}

@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+
+group = "ru.rgs.logging"
+
+ext {
+    jmhVersion = "1.20"
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven {
+            url "http://repo.spring.io/plugins-release/"
+        }
+    }
+
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    dependencyManagement {
+        dependencies {
+            dependency "ch.qos.logback:logback-classic:1.2.1"
+            dependency "com.fasterxml.jackson.core:jackson-annotations:2.6.7"
+            dependency "com.fasterxml.jackson.core:jackson-databind:2.6.7"
+            dependency "com.google.code.gson:gson:2.8.0"
+            dependency "com.google.guava:guava:19.0"
+            dependency "com.splunk.logging:splunk-library-javalogging:1.5.2"
+            dependency "junit:junit:4.12"
+            dependency "org.apache.commons:commons-lang3:3.5"
+            dependency "org.apache.logging.log4j:log4j-core:2.8.2"
+            dependency "org.apache.logging.log4j:log4j-slf4j-impl:2.8.2"
+            dependency "org.codehaus.groovy:groovy-all:2.4.7"
+            dependency "org.spockframework:spock-core:1.1-groovy-2.4"
+            dependency "org.json:json:20160810"
+            dependency "org.projectlombok:lombok:1.16.12"
+            dependency "org.slf4j:slf4j-api:1.7.22"
+            dependency "org.openjdk.jmh:jmh-core:${jmhVersion}"
+            dependency "org.openjdk.jmh:jmh-generator-annprocess:${jmhVersion}"
+        }
+    }
+
+    group = "ru.rgs.logging"
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    jar {
+        archiveName "${project.name}-${project.version}.jar"
+    }
+}
+

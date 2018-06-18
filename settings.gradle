@@ -1,0 +1,9 @@
+rootProject.name = 'logging'
+
+include ':logging-core'
+include ':splunk-logging-log4j2'
+include ':splunk-logging-logback'
+include ':logging-test-inmemory-core'
+include ':logging-test-inmemory-log4j2'
+include ':logging-test-inmemory-logback'
+include ':splunk-logging-demo'

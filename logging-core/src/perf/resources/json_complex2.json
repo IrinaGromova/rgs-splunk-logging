@@ -1,0 +1,134 @@
+{
+  "individual": {
+    "cat_with_exif.jpg": {
+      "blurriness": {
+        "isBlurry": true,
+        "varianceLaplacian": 9,
+        "varianceLaplacianCropped": 11,
+        "quality": 5
+      },
+      "luminance": {
+        "isOverexposed": false,
+        "isUnderexposed": false,
+        "isBadlyLit": false,
+        "percentOfWhites": 6.64,
+        "percentOfBlacks": 6.06,
+        "percentOfGreys": 87.3,
+        "quality": 100
+      },
+      "exif": {
+        "isMetadataPresent": true,
+        "imageDimensions": {
+          "width": 3264,
+          "height": 2448
+        },
+        "exifMetadata": {
+          "date": "2013-04-29T15:48:39",
+          "Exif Version": "2.20",
+          "Focal Length": "4 mm",
+          "YCbCr Positioning": "Center of pixel array",
+          "tiff:ResolutionUnit": "Inch",
+          "Date/Time Original": "2013:04:29 11:48:39",
+          "Shutter Speed Value": "1/14 sec",
+          "X Resolution": "72 dots per inch",
+          "tiff:Make": "SAMSUNG",
+          "Brightness Value": "-39/100",
+          "Unique Image ID": "SEEH05",
+          "F-Number": "f/2.6",
+          "modified": "2013-04-29T15:48:39",
+          "Exposure Program": "Aperture priority",
+          "meta:creation-date": "2013-04-29T15:48:39",
+          "User Comment": "",
+          "exif:FNumber": "2.65",
+          "Exposure Time": "1/15 sec",
+          "Creation-Date": "2013-04-29T15:48:39",
+          "ISO Speed Ratings": "400",
+          "Make": "SAMSUNG",
+          "Orientation": "Top, left side (Horizontal / normal)",
+          "Metering Mode": "Center weighted average",
+          "tiff:Orientation": "1",
+          "tiff:Software": "T989UVLI1",
+          "exif:FocalLength": "4.03",
+          "Software": "T989UVLI1",
+          "Exif Image Height": "2448 pixels",
+          "tiff:YResolution": "72.0",
+          "Y Resolution": "72 dots per inch",
+          "FlashPix Version": "1.00",
+          "dcterms:created": "2013-04-29T15:48:39",
+          "dcterms:modified": "2013-04-29T15:48:39",
+          "Last-Modified": "2013-04-29T15:48:39",
+          "exif:Flash": "false",
+          "exif:ExposureTime": "0.06666666666666667",
+          "Last-Save-Date": "2013-04-29T15:48:39",
+          "Color Space": "sRGB",
+          "meta:save-date": "2013-04-29T15:48:39",
+          "Date/Time Digitized": "2013:04:29 11:48:39",
+          "Flash": "Flash did not fire, auto",
+          "Aperture Value": "f/2.6",
+          "Makernote": "[66 values]",
+          "tiff:XResolution": "72.0",
+          "exif:DateTimeOriginal": "2013-04-29T15:48:39",
+          "Date/Time": "2013:04:29 11:48:39",
+          "Exif Image Width": "3264 pixels",
+          "Image Height": "2448 pixels",
+          "Image Width": "3264 pixels",
+          "Resolution Unit": "Inch",
+          "tiff:Model": "SGH-T989",
+          "exif:IsoSpeedRatings": "400",
+          "Exposure Bias Value": "0 EV",
+          "Max Aperture Value": "f/2.6",
+          "Exposure Mode": "Auto exposure",
+          "Model": "SGH-T989",
+          "Scene Capture Type": "Standard",
+          "White Balance Mode": "Auto white balance"
+        }
+      },
+      "fraudDetection": {
+        "errors": []
+      }
+    },
+    "cat_without_exif.jpg": {
+      "blurriness": {
+        "isBlurry": false,
+        "varianceLaplacian": 396,
+        "varianceLaplacianCropped": 716,
+        "quality": 100
+      },
+      "luminance": {
+        "isOverexposed": false,
+        "isUnderexposed": false,
+        "isBadlyLit": false,
+        "percentOfWhites": 14.1,
+        "percentOfBlacks": 12.3,
+        "percentOfGreys": 73.6,
+        "quality": 92
+      },
+      "exif": {
+        "isMetadataPresent": false,
+        "imageDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "exifMetadata": {
+          "Image Height": "1600 pixels",
+          "X Resolution": "300 dots",
+          "Image Width": "2400 pixels",
+          "Y Resolution": "300 dots"
+        }
+      },
+      "fraudDetection": {
+        "errors": []
+      }
+    }
+  },
+  "group": {
+    "imageResolutionEqualness": {
+      "errorMessage": "Possible resize or different used cameras detected: resolutions of image group are not equal to each other",
+      "resolutionSame": false
+    }
+  },
+  "analyzedDocuments": [
+    "cat_with_exif.jpg",
+    "cat_without_exif.jpg"
+  ]
+}

@@ -1,0 +1,19 @@
+apply plugin: 'groovy'
+
+dependencies {
+    compile project(":logging-core"),
+            "ch.qos.logback:logback-classic",
+            "com.fasterxml.jackson.core:jackson-annotations",
+            "com.fasterxml.jackson.core:jackson-databind",
+            "com.google.guava:guava",
+            "com.splunk.logging:splunk-library-javalogging",
+            "org.apache.commons:commons-lang3",
+            "org.codehaus.groovy:groovy-all",
+            "org.json:json",
+            "org.projectlombok:lombok",
+            "org.slf4j:slf4j-api"
+
+    testCompile project(":logging-test-inmemory-logback"),
+                "com.google.code.gson:gson",
+                "org.spockframework:spock-core"
+}

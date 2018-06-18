@@ -1,0 +1,8 @@
+apply plugin: 'groovy'
+
+dependencies {
+    compile "ch.qos.logback:logback-classic"
+    compile "org.codehaus.groovy:groovy-all"
+    compile "org.projectlombok:lombok"
+    compile project(":logging-test-inmemory-core")
+}

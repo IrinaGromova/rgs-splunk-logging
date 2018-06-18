@@ -1,0 +1,27 @@
+sourceSets {
+    perf
+}
+
+dependencies {
+    compile "org.json:json",
+            "org.apache.commons:commons-lang3",
+            "org.projectlombok:lombok",
+            "org.slf4j:slf4j-api",
+            "com.fasterxml.jackson.core:jackson-annotations",
+            "com.fasterxml.jackson.core:jackson-databind"
+
+    testCompile "junit:junit"
+
+    perfCompile sourceSets.main.output,
+                "org.json:json",
+                "com.fasterxml.jackson.core:jackson-annotations",
+                "com.fasterxml.jackson.core:jackson-databind",
+                'org.openjdk.jmh:jmh-core',
+                'org.openjdk.jmh:jmh-generator-annprocess'
+}
+
+task runBenchmark(type: JavaExec) {
+    args = ["-f", "1"]
+    main = 'org.openjdk.jmh.Main'
+    classpath = sourceSets.perf.runtimeClasspath + sourceSets.main.runtimeClasspath
+}
